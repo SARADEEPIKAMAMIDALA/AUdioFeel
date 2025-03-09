@@ -1,0 +1,65 @@
+
+:root{
+
+    /* Default Variables */
+    --defaultBackground: blue;
+    --defaultHeight: 30;
+    --defaultWidth: 20;
+    --defaultMargin: 0;
+
+    /* Bottom Section */
+    --bottomHeight: 20;
+    --bottomMargin: 5;
+
+    /* Title Section Variables */
+    --titleSectionBackground: orange;
+    --titleSectionPadding: 2;
+    --titleSectionMargin: 1;
+    --titleSectionHeight: 10;
+    --titleSectionWidth: 15;
+    --titleSectionTop: -1;
+    --titleSectionLeft: 0;
+
+    /* Main Section Variables */
+    --mainSectionBackground: var(--defaultBackground);
+    --mainSectionPadding: 2;
+    --mainSectionMargin: 1;
+    --mainSectionHeight:  calc( 90 - 2 * var(--mainSectionMargin) - var(--defaultHeight) );
+    --mainSectionWidth:  calc( 80 - 3 * var(--mainSectionMargin)  - var(--defaultWidth) * 2 );
+    --mainSectionTop: 4;
+    --mainSectionLeft: calc( 10 + var(--defaultWidth) - var(--defaultMargin) * 3 - var(--mainSectionPadding) * 2 );
+
+    /* Setting Section Variables */
+    --settingSectionBackground: green;
+    --settingSectionTop: 15;
+    --settingSectionLeft: -2;
+    --settingSectionPadding: 2;
+    --settingSectionMargin: 3;
+    --settingSectionHeight: calc( 100 - var(--settingSectionTop) - var(--bottomHeight) - var(--bottomMargin)*2 - var(--settingSectionMargin)*2 );
+    --settingSectionWidth: 7;
+
+    /* PlayList Section Variables */
+    --playListSectionBackground: pink;
+    --playListSectionRight: -2;
+    --playListSectionPadding: 2;
+    --playListSectionMargin: 3;
+    --playListSectionTop: -3;
+    --playListSectionHeight: calc( 100 - var(--playListSectionTop) - var(--bottomHeight) - var(--bottomMargin)*2 - var(--playListSectionMargin)*2 );
+    --playListSectionWidth: 12;
+
+    /* track Section Variables */
+    --trackSectionBackground: green;
+    --trackSectionBottom:0;
+    --trackSectionLeft:10;
+    --trackSectionWidth:75;
+    --trackSectionMargin:1.75;
+    --trackSectionHeight: calc( var(--defaultHeight) * 0.6 );
+    
+    /* Wave Section Varables */
+    --leftWaveSectionBackground: red;
+    --leftWaveSectionHeight: var(--trackSectionHeight);
+    --leftWaveSectionWidth:10;
+    --leftWaveSectionPadding:0;
+    --leftWaveSectionMargin:1;
+    --leftWaveSectionBottom:0;
+}

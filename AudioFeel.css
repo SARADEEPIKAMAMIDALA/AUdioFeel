@@ -1,0 +1,496 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 1px;
+}
+#project-title {
+  color: black;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  font-variant: small-caps;
+  font-family: cursive;
+}
+.background-gif {
+  background-image: url("https://i.gifer.com/origin/55/55c41a4c580cdb65518e222ebeed0e51.gif");
+  background-size: cover;
+}
+.gradient-background {
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  background-size: cover;
+}
+hr {
+  border: 3px solid;
+  width: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: white;
+}
+#play-list-section {
+  overflow-y: scroll;
+  height: 95%;
+}
+
+/* Right Side Playlist | CSS */
+#playList {
+  margin-left: 10px;
+  margin-top: 5px;
+  height: 90%;
+}
+#playList::-webkit-scrollbar {
+  width: 10px;
+  background-color: gray;
+  border-radius: 50px;
+}
+#playList::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+.genere {
+  background-color: lightblue;
+  border-radius: 15px;
+  box-shadow: 2px gray;
+  width: 95%;
+  padding: 5px;
+  margin: 10px -15px 5px 5px;
+  border-style: double;
+}
+.genere:hover > .genereTitle {
+  color: black;
+}
+.genereTitle {
+  color: rgb(241, 131, 131);
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 0.5vw;
+}
+.songElement {
+  color: black;
+  border: solid 1px black;
+  margin: 1vh 1vh;
+  padding: 2px;
+  border-radius: 10px;
+  transition: letter-spacing 0.2s ease-in-out 0.1s;
+  height: 6vh;
+  transition: background 0.5s linear;
+}
+.songElement:hover {
+  background-color: lightcyan;
+  /*this is ok dont change it*/
+  transition: letter-spacing 0.2s ease-in-out 0.1s;
+  letter-spacing: 0.13vw;
+  animation: rotateObject 0.1s linear 1;
+  cursor: context-menu;
+}
+.circle {
+  font-size: x-large;
+  color: rgb(235, 18, 202);
+  margin-right: -5px;
+}
+.circle:hover {
+  cursor: pointer;
+  color: rgb(85, 3, 67);
+}
+.plus,
+.dash {
+  cursor: pointer;
+  font-size: x-large;
+  margin-right: 0vw;
+  color: rgb(206, 116, 116);
+  border-radius: 50%;
+}
+.plus:hover {
+  cursor: pointer;
+  color: rgb(91, 4, 4);
+}
+.songImage > img {
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-5px);
+}
+.songName {
+  width: 80%;
+  font-size: smaller;
+}
+@keyframes rotateObject {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-2deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(2deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+/* End of Right Side Playlist CSS */
+
+.current-song-image {
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  /* opacity: 0.5; */
+  height: 30vw;
+  width: 30vw;
+  justify-content: center;
+  background-size: cover;
+  color: blue;
+}
+
+#currentImage {
+  margin-bottom: -65px;
+  height: 30vw;
+  width: 30vw;
+  border-radius: 50% 50%;
+  animation: shakeImage 2s linear infinite alternate;
+  z-index: 0;
+}
+
+@keyframes shakeImage {
+  0% {
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(10deg);
+  }
+}
+
+#currentSong {
+  z-index: 1;
+  margin: 0px;
+  opacity: 1;
+  border-radius: 10px;
+  height: 10vh;
+  font-weight: bold;
+  text-shadow: 0.1vw 0.1vw 10px cyan;
+  color: white;
+  font-variant: small-caps;
+  font-style: bold;
+  letter-spacing: 0.1vw;
+  padding: 4vh;
+  background: linear-gradient(
+    transparent,
+    transparent,
+    transparent,
+    gray,
+    gray,
+    black,
+    black
+  );
+}
+
+.musicPlayList {
+  background-color: black;
+  color: white;
+  box-shadow: 2px gray;
+  width: 95%;
+  margin-left: 5px;
+  margin-top: 10px;
+  height: 80%;
+  border-radius: 15px;
+  margin-right: -15px;
+  padding: 15px;
+}
+.yourPlaylistTitle {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+.songSelected {
+  border: double 1px white;
+  margin: 10px;
+  border-radius: 15px;
+  padding: 5px;
+  text-align: center;
+}
+
+/*
+    Edit CSS from here
+*/
+
+.control-panel-section table {
+  width: 100%;
+  padding: 0px;
+}
+.songDataFields {
+  margin: 0.2vw;
+  display: inline-block;
+}
+
+.songDataLeft {
+  width: 6%;
+}
+
+.songDataMiddle {
+  width: 77%;
+}
+
+.songDataRight {
+  width: 15%;
+}
+
+#songBarPoint {
+  border-radius: 10px;
+  /* background: linear-gradient(90deg, blue 90%, red 10%); */
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#songBarPoint > i {
+  background-color: white;
+  color: whitesmoke;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Settings CSS */
+.settings-container {
+  position: fixed;
+  top: 10%;
+  left: 37%;
+  z-index: 5;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 20px;
+  padding: 1%;
+  background-image: linear-gradient(rgb(231, 168, 246), rgb(210, 89, 232));
+  border-style: outset;
+  border-color: black;
+  border-width: 10px;
+}
+.exit-button {
+  background-color: transparent;
+}
+
+/* Customization CSS */
+.customization-container {
+  position: fixed;
+  top: 10%;
+  left: 37%;
+  z-index: 5;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 20px;
+  padding: 1%;
+  background-image: linear-gradient(rgb(231, 168, 246), rgb(210, 89, 232));
+}
+
+/* CSS for Volume Bars */
+
+.volumeBar {
+  transform: translateY(15px) rotateX(180deg);
+  display: flex;
+  text-align: justify;
+  height: 37px;
+  background: gray;
+  margin-left: 2px;
+  padding: 2px;
+}
+
+.volumeBar > span {
+  display: inline-block;
+  /* border: 1px solid black; */
+  width: 4px;
+  margin: 0.5px;
+  background-color: white;
+  transition: background 1s linear;
+}
+
+#volume-indicator {
+  transform: translateY(15px) rotateX(180deg);
+  width: 0px;
+  height: 20px;
+  font-size: smaller;
+  color: white;
+}
+
+#volume-bar-0 {
+  height: 10%;
+  background-color: rgb(136, 225, 113);
+}
+
+#volume-bar-1 {
+  height: 20%;
+  background-color: rgb(160, 225, 113);
+}
+
+#volume-bar-2 {
+  height: 30%;
+  background-color: rgb(191, 225, 113);
+}
+
+#volume-bar-3 {
+  height: 40%;
+  background-color: rgb(216, 225, 113);
+}
+
+#volume-bar-4 {
+  height: 50%;
+  background-color: rgb(225, 212, 113);
+}
+
+#volume-bar-5 {
+  height: 60%;
+  background-color: rgb(225, 173, 113);
+}
+
+#volume-bar-6 {
+  height: 70%;
+  background-color: rgb(243, 162, 115);
+}
+
+#volume-bar-7 {
+  height: 80%;
+  background-color: rgb(244, 104, 97);
+}
+
+#volume-bar-8 {
+  height: 90%;
+  background-color: rgb(255, 74, 74);
+}
+
+#volume-bar-9 {
+  height: 100%;
+  background-color: rgb(255, 11, 11);
+}
+
+/* Left Panel CSS */
+
+#musicPlayList {
+  /* background-color:rgb(116,208,204); */
+  background-color: transparent;
+}
+
+.yourPlaylistTitle {
+  background-color: lightblue;
+  border-radius: 15px;
+  box-shadow: 2px gray;
+  width: 95%;
+  padding: 5px;
+  margin: 10px -15px 5px 5px;
+  border-style: double;
+  color: black;
+}
+.songSelected {
+  color: black;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 0.5vw;
+  background-color: rgb(169, 191, 225);
+  transition: all 1;
+}
+.yourPlaylistTitle:hover {
+  cursor: pointer;
+  color: rgb(157, 30, 149);
+}
+.songSelected:hover {
+  cursor: not-allowed;
+  color: rgb(157, 30, 149);
+}
+
+/* Wave CSS */
+
+.wave-container {
+  display: block;
+  position: relative;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  /* background-color: red; */
+  height: 60%;
+  padding-left: 5%;
+  display: flex;
+  transform: rotateZ(180deg);
+}
+
+.wave-container > span {
+  display: inline-block;
+  background-color: white;
+  position: relative;
+  width: 6%;
+  height: 10%;
+  margin: 1.4%;
+}
+
+.waveIt {
+  animation: waveform linear infinite alternate-reverse;
+}
+
+@keyframes waveform {
+  000% {
+    height: 10%;
+  }
+  010% {
+    height: 20%;
+  }
+  020% {
+    height: 10%;
+  }
+  030% {
+    height: 30%;
+  }
+  040% {
+    height: 05%;
+  }
+  050% {
+    height: 50%;
+  }
+  060% {
+    height: 10%;
+  }
+  070% {
+    height: 10%;
+  }
+  080% {
+    height: 50%;
+  }
+  090% {
+    height: 00%;
+  }
+  100% {
+    height: 10%;
+  }
+}
+
+#wave-0 {
+  animation-duration: 2.3s;
+}
+#wave-1 {
+  animation-duration: 1.4s;
+}
+#wave-2 {
+  animation-duration: 2s;
+}
+#wave-3 {
+  animation-duration: 1.2s;
+}
+#wave-4 {
+  animation-duration: 2.8s;
+}
+#wave-5 {
+  animation-duration: 1.4s;
+}
+#wave-6 {
+  animation-duration: 2.3s;
+}
+#wave-7 {
+  animation-duration: 1.3s;
+}
+#wave-8 {
+  animation-duration: 2s;
+}
+#wave-9 {
+  animation-duration: 2.2s;
+}

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioFeel</title>
+    <link rel="stylesheet" href="AudioFeel.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <div class="container-fluid fixed-top background-gif"
+      style="font-family:roboto; height:100vh; width:100%; background-size:cover;">
+      <div class="row" style="height:80vh;">
+        <div
+          class="col-md-3 order-1 col-12 mt-3 order-md-0 mb-2 mb-md-0"
+          id="setting-section">
+          <div class="gradient-background text-center"
+            style=" border-radius:20px;">
+            <h1 id="project-title">AudioFeel</h1>
+          </div>
+          <div class="d-flex flex-column gradient-background"
+            style="height:90%; border-radius:20px;">
+            <div
+              class="d-flex flex-row justify-content-end mt-3 mr-3">
+              <button hidden type="button" class="btn"
+                style="border:1px solid white; background-color: rgb(112, 206, 206);">
+                <h1
+                  style="margin:-5px; margin-top:-5px; color:white;">...</h1>
+              </button>
+            </div>
+            <div id="musicPlayList" class="musicPlayList">
+              <!-- This Commented Code will be Added from JavaScript -->
+              <!--
+                        <div class="yourPlaylistTitle" onclick="playPlayList()"> 
+                                Your Playlist
+                            <i class="bi bi-dot"></i>
+                                X Songs | 
+                            <i class="bi bi-play-fill"></i> 
+                        </div>
+                        <div class="songSelected">SongName</div> 
+                        <div class="songSelected">SongName</div>
+                        <div class="songSelected">SongName</div>
+                        -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3 order-0 col-12 order-md-1"
+          id="main-section">
+          <div
+            class="d-flex align-items-center justify-content-center gradient-background"
+            style="height:100%;  border-radius:20px;">
+            <div
+              class="current-song-image d-flex flex-column justify-content-end">
+              <img id="currentImage" class src="./music.jpeg"
+                draggable="false">
+              <h2 id="currentSong" class="text-center">Play Your
+                Feel</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-3 order-2 col-12 order-md-2"
+          id="play-list-section">
+          <div class="d-flex flex-column gradient-background"
+            style="height:100%;  border-radius:20px;">
+            <div
+              class="d-flex flex-row justify-content-end mt-3 mr-3">
+              <button type="button" class="btn btn-success">
+                <h3
+                  style="margin-top:-25px; margin-bottom:-5px; color:white;">x
+                </h3>
+              </button>
+            </div>
+            <!-- Edit CSS for this Element || Message for any doubts -->
+            <!-- Do not Edit HTML | Edit Only CSS -->
+            <div id="playList" style="overflow-x: hidden;">
+              <!-- This Commented Code will added by JS -->
+              <!--
+                            <div class="genere" id="genere{..}"> 
+                                <div class="genereTitle">GenereName<i class="bi bi-dot"></i>X Songs</div> 
+                                <div style="overflow:scroll;height:20vh;">
+                                    <div class="songElement"> 
+                                        <span class=\"songImage\"><img src="./songDefaultImage.jpeg"></span>
+                                        <span class="circle bi bi-play" onclick="playThisSong('./Genere/Song.mp3',this)"></span> 
+                                        <span class="plus bi bi-plus" onclick="createMusicList('./Genere/Song.mp3',this)"></span> 
+                                        <span class="songName">SongName</span> 
+                                    </div>
+                                </div>
+                            </div>
+                        -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="panel-section d-flex flex-row m-3 "
+            style="height:15vh;">
+            <div class="gradient-background mr-2"
+              style="border-radius: 15px; width:15%;">
+              <div class="wave-container">
+                <span class id="wave-0"></span>
+                <span class id="wave-1"></span>
+                <span class id="wave-2"></span>
+                <span class id="wave-3"></span>
+                <span class id="wave-4"></span>
+                <span class id="wave-5"></span>
+                <span class id="wave-6"></span>
+                <span class id="wave-7"></span>
+                <span class id="wave-8"></span>
+                <span class id="wave-9"></span>
+              </div>
+            </div>
+            <div
+              class="control-panel-section gradient-background mr-2"
+              style="border-radius: 15px; width :70%;">
+              <table cellpadding="0px" cellspacing="0px"
+                border="2">
+                <tr>
+                  <td class="songDataFields songDataLeft">
+                    <span class="songTime"
+                      id="songCurrentTime">00:00:00</span>
+                  </td>
+                  <td class="songDataFields songDataMiddle">
+                    <span class="songBar" id="songBar"><span
+                        class="songBarPoint"
+                        id="songBarPoint"><i
+                          class="bi bi-dot"
+                          id="songProgressPoint"></i></span></span>
+                  </td>
+                  <td class="songDataFields songDataRight">
+                    <span class="songTime"
+                      id="songLeftTime">00:00:00</span>
+                    <span
+                      class="songSlashtext">&nbsp;/&nbsp;</span>
+                    <span class="songTime"
+                      id="songTotalTime">00:00:00</span>
+                  </td>
+                </tr>
+              </table>
+              <!-- Below DIV has all the buttons related to song -->
+              <div class="d-flex flex-row justify-content-center">
+                <div onclick="enableLoopCurrentSong()">
+                  <span type="button"
+                    class="btn btn-primary mt-3"><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16"
+                      fill="currentColor"
+                      class="bi bi-repeat-1"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M11 4v1.466a.25.25 0 0 0 .41.192l2.36-1.966a.25.25 0 0 0 0-.384l-2.36-1.966a.25.25 0 0 0-.41.192V3H5a5 5 0 0 0-4.48 7.223.5.5 0 0 0 .896-.446A4 4 0 0 1 5 4zm4.48 1.777a.5.5 0 0 0-.896.446A4 4 0 0 1 11 12H5.001v-1.466a.25.25 0 0 0-.41-.192l-2.36 1.966a.25.25 0 0 0 0 .384l2.36 1.966a.25.25 0 0 0 .41-.192V13h6a5 5 0 0 0 4.48-7.223Z" />
+                      <path
+                        d="M9 5.5a.5.5 0 0 0-.854-.354l-1.75 1.75a.5.5 0 1 0 .708.708L8 6.707V10.5a.5.5 0 0 0 1 0z" />
+                    </svg></span>
+                </div>
+                <div onclick="enableLoopPlayList()">
+                  <span type="button"
+                    class="btn btn-success mt-3"><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16"
+                      fill="currentColor"
+                      class="bi bi-repeat"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z" />
+                    </svg></span>
+                </div>
+                <div onclick="disableLoop()">
+                  <span class="btn-danger" height="13"
+                    width="16"
+                    style="padding-bottom:14px; padding-right:5px; border-radius: 5px; padding-left: 5px; zoom: 80%; display:inline-block; transform: translateY(17px);">
+                    <span type="button" width="16"
+                      height="16"
+                      class="btn btn-danger mt-3"
+                      style="zoom: 25%; transform: translateY(15px);">
+                      <svg width="112" height="102">
+                        <path
+                          d="M0 0 C3.52587654 0.58699442 5.26081787 1.85436813 7.8203125 4.30859375 C8.52027344 4.97310547 9.22023438 5.63761719 9.94140625 6.32226562 C11.02228516 7.36930664 11.02228516 7.36930664 12.125 8.4375 C12.85332031 9.13166016 13.58164062 9.82582031 14.33203125 10.54101562 C16.91203929 13.00418411 19.47771146 15.47771146 22 18 C24.94096737 18.17539436 27.78653349 18.23132375 30.7265625 18.1953125 C31.58937836 18.1924826 32.45219421 18.18965271 33.34115601 18.18673706 C36.1025772 18.17552333 38.8636765 18.15041684 41.625 18.125 C43.49478699 18.11497173 45.36457905 18.10584562 47.234375 18.09765625 C51.82304109 18.07558012 56.41146593 18.04104234 61 18 C61 15.36 61 12.72 61 10 C64.9520518 10.58172725 67.22095053 12.55157741 70.25 15.0625 C71.14203125 15.79597656 72.0340625 16.52945312 72.953125 17.28515625 C73.62859375 17.85105469 74.3040625 18.41695312 75 19 C74.6628464 21.99392393 74.01189576 22.98831742 71.8203125 25.140625 C70.48613281 26.18476562 70.48613281 26.18476562 69.125 27.25 C68.24070312 27.95640625 67.35640625 28.6628125 66.4453125 29.390625 C64 31 64 31 61 31 C61 28.36 61 25.72 61 23 C45.16 23.495 45.16 23.495 29 24 C38.32539998 33.47904958 38.32539998 33.47904958 48.17578125 42.39453125 C50.20805506 44.18310628 52.10057895 46.07118753 54 48 C56.68060792 50.7016736 59.38277151 53.36430632 62.1875 55.9375 C62.79980469 56.50339844 63.41210938 57.06929687 64.04296875 57.65234375 C66.3943975 59.27159109 68.16653929 59.74407452 71 60 C75.8310274 57.28991146 78.36584348 53.17778942 80 48 C80.64486945 42.27678361 79.98214502 36.64733388 79 31 C81.375 31.1875 81.375 31.1875 84 32 C86.95816204 37.7643637 87.0817564 44.37555845 85.2421875 50.5390625 C82.41833101 57.18735455 78.66244115 61.55027277 73 66 C73.69867188 66.62648438 74.39734375 67.25296875 75.1171875 67.8984375 C76.02726562 68.71570313 76.93734375 69.53296875 77.875 70.375 C78.77992187 71.18710938 79.68484375 71.99921875 80.6171875 72.8359375 C82.10896183 74.19076205 83.57505435 75.57505435 85 77 C84.625 79.125 84.625 79.125 84 81 C80.24074459 80.64968098 78.76827418 78.79744977 76.36175537 76.05952454 C71.82652152 71.07620078 67.98664624 68.39001293 61.17663574 67.79421997 C57.0258741 67.64603776 52.90078274 67.69864311 48.75 67.8125 C47.02214839 67.81947368 45.29426915 67.82146293 43.56640625 67.81835938 C39.37507206 67.82151589 35.18988544 67.89183893 31 68 C31 70.64 31 73.28 31 76 C27.0479482 75.41827275 24.77904947 73.44842259 21.75 70.9375 C20.85796875 70.20402344 19.9659375 69.47054687 19.046875 68.71484375 C18.37140625 68.14894531 17.6959375 67.58304687 17 67 C17.3371536 64.00607607 17.98810424 63.01168258 20.1796875 60.859375 C21.06914063 60.16328125 21.95859375 59.4671875 22.875 58.75 C23.75929688 58.04359375 24.64359375 57.3371875 25.5546875 56.609375 C28 55 28 55 31 55 C31 57.64 31 60.28 31 63 C40.9 62.67 50.8 62.34 61 62 C59.164375 60.329375 57.32875 58.65875 55.4375 56.9375 C51.40150201 53.25241127 47.46463628 49.50753481 43.63671875 45.60546875 C41.21105576 43.22611913 38.62404177 41.04459884 36.046875 38.83203125 C33.87320171 36.88651069 31.84610827 34.84094685 29.8125 32.75 C27.07877541 29.96774776 24.52494189 27.76247095 21 26 C16.26179647 29.15880235 13.69700158 32.62308737 12 38 C11.35513055 43.72321639 12.01785498 49.35266612 13 55 C10.625 54.8125 10.625 54.8125 8 54 C5.18450786 48.56252033 5.28006752 42.9672754 6 37 C8.12825711 30.38687491 11.33745245 25.95061457 17 22 C12.78377806 16.78519918 8.20483691 12.34850037 3.171875 7.91796875 C1.7419098 6.65517574 0.34897122 5.34897122 -1 4 C-0.625 1.875 -0.625 1.875 0 0 Z "
+                          fill="#FBFDFB"
+                          transform="translate(11,12)" />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <div>
+                  <span type="button"
+                    class="btn btn-warning mt-3 mr-2"><i
+                      class="bi bi-shuffle"></i></span>
+                </div>
+                <div>
+                  <span type="button"
+                    class="btn btn-primary mt-3 mr-2 ml-2"><i
+                      class="bi bi-arrow-left-circle"></i></span>
+                </div>
+                <div>
+                  <span onclick="seekBackwardSong()"
+                    onmouseover="changeHoverIcon(this,-1,true)"
+                    onmouseout="changeHoverIcon(this,-1,false)"
+                    type="button"
+                    class="btn btn-info mt-3"><i
+                      class="bi bi-skip-backward"></i></span>
+                </div>
+                <div>
+                  <span onclick="playControl()"
+                    onmouseover="changeHoverIcon(this,0,true)"
+                    onmouseout="changeHoverIcon(this,0,false)"
+                    type="button" id="play_pause_button"
+                    class="btn btn-warning mt-3"><i
+                      class="bi bi-play-circle-fill"></i></span>
+                </div>
+                <div>
+                  <span onclick="seekForwardSong()"
+                    onmouseover="changeHoverIcon(this,1,true)"
+                    onmouseout="changeHoverIcon(this,1,false)"
+                    type="button"
+                    class="btn btn-info mt-3"><i
+                      class="bi bi-skip-forward"></i>
+                  </span>
+                </div>
+                <div>
+                  <span type="button"
+                    class="btn btn-primary mt-3 mr-2 ml-2"><i
+                      class="bi bi-arrow-right-circle"></i></span>
+                </div>
+                <!-- Volume Options -->
+                <div>
+                  <span type=" button"
+                    class="btn btn-danger mt-3 ml-2"
+                    onclick="decreaseVolume()"><i
+                      class="bi bi-volume-down"></i></span>
+                </div>
+                <div>
+                  <span type="button"
+                    class="btn btn-success mt-3"
+                    onclick="MuteSong()"><i
+                      class="bi bi-volume-mute"></i></span>
+                </div>
+                <div>
+                  <span type="button"
+                    class="btn btn-primary mt-3"
+                    onclick="increaseVolume()"><i
+                      class="bi bi-volume-up"></i></span>
+                </div>
+                <div class="volumeBar">
+                  <!-- Edit This Div -->
+                  <span id="volume-indicator">100%</span>
+                  <span id="volume-bar-0"
+                    background-color="rgb(136, 225, 113)">
+                  </span>
+                  <span id="volume-bar-1"
+                    background-color="rgb(160, 225, 113)">
+                  </span>
+                  <span id="volume-bar-2"
+                    background-color="rgb(191, 225, 113)">
+                  </span>
+                  <span id="volume-bar-3"
+                    background-color="rgb(216, 225, 113)">
+                  </span>
+                  <span id="volume-bar-4"
+                    background-color="rgb(225, 212, 113)">
+                  </span>
+                  <span id="volume-bar-5"
+                    background-color="rgb(225, 173, 113)">
+                  </span>
+                  <span id="volume-bar-6"
+                    background-color="rgb(243, 162, 115)">
+                  </span>
+                  <span id="volume-bar-7"
+                    background-color="rgb(244, 104, 97)">
+                  </span>
+                  <span id="volume-bar-8"
+                    background-color="rgb(255, 74, 74)">
+                  </span>
+                  <span id="volume-bar-9"
+                    background-color="rgb(255, 11, 11)">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="wave-section gradient-background mr-2 pt-4 pl-4"
+              style="border-radius: 15px; width :15%;">
+              <span class="optionsButton" id="settingsButton"
+                onclick="openSettings()"><i
+                  class="bi bi-gear"></i> Settings</span><br>
+              <span class="optionsButton" id="customization"
+                onclick="openCustomization()"><i
+                  class="bi bi-sliders"></i>
+                Customization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="settings-container" id="settings-container"
+        opened="false" hidden>
+        <!-- This Section needs Editing | CSS+JS -->
+        <button class="exit-button">&times;</button>
+        <div class="settings-title">Settings</div>
+        <div class="theme-settings">
+          <div class="theme-title">Theme</div>
+          <div class="theme-menu">
+            <div class="theme-family">
+              <div class="theme-family-title">Solid</div>
+              <div class="theme-options">
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+              </div>
+            </div>
+            <div class="theme-family">
+              <div class="theme-family-title">Neon</div>
+              <div class="theme-options">
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+                <span class="theme-option">C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="customization-container" id="customization-container"
+        opened="false" hidden>
+        <h6
+          style="border: 2px solid blueviolet; padding-top: 3%; padding-bottom: 3%; padding-left: 27%; background-color: aqua;">Customization</h6><br><br>
+        <div style="display:flex">
+          <h6
+            style=" border: 2px solid blueviolet; margin-right: 20%; padding-right:15%;">Animations
+          </h6><br>
+          <h6
+            style=" border: 2px solid blueviolet; margin-right: 10%; display: flex;">enable/disable</h6>
+        </div>
+        <br>
+
+        <div style="display:flex">
+          <h6
+            style=" border: 2px solid blueviolet; margin-right: 30%; margin-left: 10%; padding-bottom: 2%; padding-left: 8%; padding-right: 8%; padding-top: 4%;"><button>0</button></h6>
+          <h6
+            style=" border: 2px solid blueviolet; margin-right: 30%; margin-left:10% flex;padding-bottom: 4%; padding-left: 8%; padding-right: 8%; padding-top: 4%;"><button>0</button></h6>
+        </div>
+
+        <br>
+        <br>
+
+        <div style="display:flex">
+
+          <h6
+            style=" border: 2px solid blueviolet; margin-right: 60%; padding-right: 10%; ">Timer</h6>
+          <h6
+            style=" border: 2px solid blueviolet; margin-right: 0%; ">on/off</h6>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./AudioFeelMusicList.js"></script>
+  <script src="./AudioFeel.js"></script>
+
+</html>
